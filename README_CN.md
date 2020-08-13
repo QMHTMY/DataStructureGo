@@ -1,5 +1,5 @@
 ### 简介
-[[English](./README.md)] 此项目为基本数据结构go实现
+[[English](./README.md)] 此项目为基本数据结构的go语言实现
 
 *包括：*
 
