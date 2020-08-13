@@ -1,4 +1,4 @@
-// go双端队列实现
+//go双端队列实现
 
 package bds
 
@@ -48,7 +48,6 @@ func (q *Deque) Size() (int) {
 func (q *Deque) IsEmpty() (bool) {
     return len(q.items) == 0
 }
-
 
 // 初始化双端队列
 var deque Deque

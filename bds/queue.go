@@ -1,11 +1,10 @@
-// go队列实现
+//go队列实现
 
 package bds
 
 import (
     "fmt"
 )
-
 
 //基本数据容器
 type Item interface {
@@ -39,7 +38,6 @@ func (q *Queue) IsEmpty() (bool) {
     return len(q.items) == 0
 }
 
-
 // 初始化队列
 var queue Queue
 
@@ -63,4 +61,3 @@ func main() {
     fmt.Println('remove top ', q.Pop())
     fmt.Println('size ', q.Size())
 }
-

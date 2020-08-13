@@ -1,4 +1,4 @@
-// go栈实现
+//go栈实现
 
 package bds
 
@@ -6,6 +6,7 @@ import (
     "fmt"
 )
 
+//基本数据容器
 type Item interface {
 }
 
@@ -13,6 +14,7 @@ type Stack struct {
     items []Item
 }
 
+//容器操作函数
 func (s *Stack) New() (*Stack) {
     s.items = []Item{}
     return s
@@ -40,7 +42,6 @@ func (s *Stack) Size() (int) {
 func (s *Stack) IsEmpty() (bool) {
     return len(s.items) == 0
 }
-
 
 // 初始化栈
 var stack Stack
