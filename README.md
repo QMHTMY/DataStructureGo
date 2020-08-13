@@ -1,7 +1,7 @@
 ### Description  
 [[中文](./README_CN.md)] This repository contains some basic data structures' implementation with go-lang. 
 
-*including: * 
+including:
 
 * Heap
 * Stack 
