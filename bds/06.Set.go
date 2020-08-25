@@ -2,7 +2,7 @@
 // 目前只是结合泛型草案实现的集合
 // 2021年8月泛型支持后，此代码才可用，先写在这里
 
-package main
+package bds //main
 
 import (
     "fmt"
@@ -77,6 +77,7 @@ func (s *Strset) SortList() ([]T) {
 }
 
 func main() {
+    //测试本代码时修改bds为main
     s := NewSet()
 
     s.Add("b")

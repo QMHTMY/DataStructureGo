@@ -3,7 +3,7 @@
 // 字符串，整数，浮点数要分别实现一套集合
 // 2021年8月泛型支持后，就可以只用实现一套
 
-package main
+package bds //main
 
 import (
     "fmt"
@@ -78,6 +78,7 @@ func (s *Intset) SortList() ([]int) {
 }
 
 func main() {
+    //测试本代码时修改bds为main
     s := NewSet()
 
     s.Add(1)
