@@ -1,20 +1,19 @@
 //go双端队列实现
 
-package bds
+package bds //main
 
 import (
     "fmt"
 )
 
 //基本数据容器
-type Item interface {
-}
+type Item interface {}
 
 type Deque struct {
     items []Item
 }
 
-//容器操作函数
+//双端队列操作函数
 func (q *Deque) New() (*Deque) {
     q.items = []Item{}
     return q
@@ -29,16 +28,16 @@ func (q *Deque) addRear(item Item){
     q.items = append(temp, q.items...)
 }
 
-func (q *Deque) removeFront() (*Item) {
+func (q *Deque) removeFront() (Item) {
     res := q.items[0]
     q.items = q.items[1:]
-    return &res
+    return res
 }
 
-func(q *Deque) removeRear() (*Item) {
-    res = q.items[len(q.items)-1]
+func(q *Deque) removeRear() (Item) {
+    res := q.items[len(q.items)-1]
     q.items = q.items[:len(q.items)-1]
-    return &res
+    return res
 }
 
 func (q *Deque) Size() (int) {
@@ -62,15 +61,16 @@ func initDeque() (*Deque) {
 
 // 测试
 func main() {
+    //测试此函数时修改bds为main
     dq := initDeque()
 
     dq.addRear(1)
+    dq.addRear(10)
     dq.addFront(5)
     dq.addFront(6)
-    dq.addRear(10)
 
-    fmt.Println('size ', dq.Size())
-    fmt.Println('head ', dq.removeFront())
-    fmt.Println('tail ', dq.removeRear())
-    fmt.Println('size ', dq.Size())
+    fmt.Println("size ", dq.Size())
+    fmt.Println("head ", dq.removeFront())
+    fmt.Println("tail ", dq.removeRear())
+    fmt.Println("size ", dq.Size())
 }

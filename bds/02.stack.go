@@ -1,20 +1,19 @@
 //go栈实现
 
-package bds
+package bds //main
 
 import (
     "fmt"
 )
 
 //基本数据容器
-type Item interface {
-}
+type Item interface {}
 
 type Stack struct {
     items []Item
 }
 
-//容器操作函数
+//栈操作函数
 func (s *Stack) New() (*Stack) {
     s.items = []Item{}
     return s
@@ -24,15 +23,15 @@ func (s *Stack) Push(item Item) {
     s.items = append(s.items, item)
 }
 
-func (s *Stack) Pop() (*Item) {
+func (s *Stack) Pop() (Item) {
     res := s.items[len(s.items)-1]
     s.items = s.items[:len(s.items)-1]
-    return &res
+    return res
 }
 
-func (s *Stack) Peek() (*Item) {
+func (s *Stack) Peek() (Item) {
     data := s.items[len(s.items)-1]
-    return &data
+    return data
 }
 
 func (s *Stack) Size() (int) {
@@ -56,13 +55,13 @@ func initStack() *Stack {
 
 // 测试
 func main() {
-
+    //测试此函数时修改bds为main
     stk := initStack()
     stk.Push(1)
     stk.Push(5)
     stk.Push(6)
-    fmt.Println('size ', stk.Size())
-    fmt.Println('top ', stk.Peek())
-    fmt.Println('remove top ', stk.Pop())
-    fmt.Println('size ', stk.Size())
+    fmt.Println("size ", stk.Size())
+    fmt.Println("top ", stk.Peek())
+    fmt.Println("rm top ", stk.Pop())
+    fmt.Println("size ", stk.Size())
 }
