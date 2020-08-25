@@ -20,6 +20,7 @@ including:
 * Graph
 
 ### Update Log 
+* 2020-08-25 uploaded Set(string, int, float64, generi).
 * 2020-08-13 uploaded Stack, Queue, Deque.
 
 ### Correction 
