@@ -16,7 +16,7 @@ type Queue struct {
 //队列操作函数
 func (q *Queue) New() (*Queue) {
     q.items = []Item{}
-    return q
+    return &q
 }
 
 func (q *Queue) Push(item Item) {
