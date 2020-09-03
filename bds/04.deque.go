@@ -21,20 +21,20 @@ func (q *Deque) New() (*Deque) {
     return q
 }
 
-func (q *Deque) addFront(item Item) {
+func (q *Deque) AddFront(item Item) {
     q.Lock()
     defer q.Unlock()
     q.items = append(q.items, item)
 }
 
-func (q *Deque) addRear(item Item){
+func (q *Deque) AddRear(item Item){
     q.Lock()
     defer q.Unlock()
     temp := []Item{item}
     q.items = append(temp, q.items...)
 }
 
-func (q *Deque) removeFront() (Item) {
+func (q *Deque) RemoveFront() (Item) {
     q.Lock()
     defer q.Unlock()
     res := q.items[0]
@@ -42,7 +42,7 @@ func (q *Deque) removeFront() (Item) {
     return res
 }
 
-func(q *Deque) removeRear() (Item) {
+func(q *Deque) RemoveRear() (Item) {
     q.Lock()
     defer q.Unlock()
     res := q.items[len(q.items)-1]
@@ -74,13 +74,13 @@ func main() {
     //测试此函数时修改bds为main
     dq := initDeque()
 
-    dq.addRear(1)
-    dq.addRear(10)
-    dq.addFront(5)
-    dq.addFront(6)
+    dq.AddRear(1)
+    dq.AddRear(10)
+    dq.AddFront(5)
+    dq.AddFront(6)
 
     fmt.Println("size ", dq.Size())
-    fmt.Println("head ", dq.removeFront())
-    fmt.Println("tail ", dq.removeRear())
+    fmt.Println("head ", dq.RemoveFront())
+    fmt.Println("tail ", dq.RemoveRear())
     fmt.Println("size ", dq.Size())
 }

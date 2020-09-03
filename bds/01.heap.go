@@ -12,16 +12,16 @@ type Heap struct {
 }
 
 type Method interface {
-    buildHeap(alist []int)
-    insert(k int)
-    percUp(i int)
-    percDown(i int)
-    minChild(i int) (int)
-    delMin() (int)
-    isEmpty() (bool)
+    BuildHeap(alist []int)
+    Insert(k int)
+    PercUp(i int)
+    PercDown(i int)
+    MinChild(i int) (int)
+    DelMin() (int)
+    IsEmpty() (bool)
 }
 
-func (hp *Heap) buildHeap(alist []int) {
+func (hp *Heap) BuildHeap(alist []int) {
     hp.list = append(hp.list, alist...)
     hp.size = len(alist)
     i := hp.size / 2
@@ -31,18 +31,18 @@ func (hp *Heap) buildHeap(alist []int) {
             break
         }
 
-        hp.percDown(i)
+        hp.PercDown(i)
         i -= 1
     }
 }
 
-func (hp *Heap) percDown(i int) {
+func (hp *Heap) PercDown(i int) {
     for {
         if (i * 2) > hp.size {
             break
         }
 
-        mc := hp.minChild(i)
+        mc := hp.MinChild(i)
         if hp.list[i] > hp.list[mc] {
             tmp := hp.list[i]
             hp.list[i] = hp.list[mc]
@@ -52,7 +52,7 @@ func (hp *Heap) percDown(i int) {
     }
 }
 
-func (hp *Heap) minChild(i int) (int) {
+func (hp *Heap) MinChild(i int) (int) {
     if i * 2 + 1 > hp.size {
         return i*2
     } else {
@@ -64,7 +64,7 @@ func (hp *Heap) minChild(i int) (int) {
     }
 }
 
-func (hp *Heap) percUp(i int) {
+func (hp *Heap) PercUp(i int) {
     for {
 
         if i / 2 <= 0 {
@@ -81,24 +81,24 @@ func (hp *Heap) percUp(i int) {
     }
 }
 
-func (hp *Heap) insert(k int) {
+func (hp *Heap) Insert(k int) {
     hp.list = append(hp.list, k)
     hp.size += 1
-    hp.percUp(hp.size)
+    hp.PercUp(hp.size)
 }
 
-func (hp *Heap) delMin() (int) {
+func (hp *Heap) DelMin() (int) {
     retval := hp.list[1]
 
     hp.list[1] = hp.list[hp.size]
     hp.list = hp.list[:hp.size]
     hp.size -= 1
-    hp.percDown(1)
+    hp.PercDown(1)
 
     return retval
 }
 
-func (hp *Heap) isEmpty() (bool) {
+func (hp *Heap) IsEmpty() (bool) {
     return hp.size == 0
 }
 
@@ -108,9 +108,9 @@ func main() {
     fmt.Println(hp.size)
 
     alist := []int{1,7,2,6,3,4,5,8}
-    hp.buildHeap(alist)
+    hp.BuildHeap(alist)
     fmt.Println(hp.size)
 
-    fmt.Println(hp.delMin())
-    fmt.Println(hp.isEmpty())
+    fmt.Println(hp.DelMin())
+    fmt.Println(hp.IsEmpty())
 }
