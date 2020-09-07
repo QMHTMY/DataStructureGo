@@ -20,8 +20,9 @@ including:
 * Graph
 
 ### Update Log 
+* 2020-09-07 uploaded BinaryTree, BinarySearchTree.
 * 2020-09-03 uploaded Heap, PriorityQueue, HashTable.
-* 2020-08-25 uploaded Set(string, int, float64, generic).
+* 2020-08-25 uploaded Set (string, int, float64, generic).
 * 2020-08-13 uploaded Stack, Queue, Deque.
 
 ### Correction 
