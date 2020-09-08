@@ -1,7 +1,6 @@
 // go实现二叉搜索树
 
-//package bds // main 
-package main
+package bds //main
 
 import (
 	"fmt"
