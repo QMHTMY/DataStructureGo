@@ -82,15 +82,15 @@ func main() {
     s := NewSet()
 
     s.Add(1)
-    s.Add(2)
-    s.Add(3)
     s.Add(4)
+    s.Add(3)
+    s.Add(2)
     s.Add(1)
+
+    fmt.Println("无序：", s.List())
+    fmt.Println("有序：", s.SortList())
 
     if s.Has(2) {
         fmt.Println("2 is in set")
     }
-
-    fmt.Println("无序：", s.List())
-    fmt.Println("有序：", s.SortList())
 }
